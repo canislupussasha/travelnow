@@ -12,8 +12,10 @@ router.get('/register', (req, res) =>{
     res.render('register'); //file inside of the views register
 });
 
-/*app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/index_.html'));
-});*/
+//Login Site
+router.get('/login', (req, res) =>{
+    res.render('login');
+});
+
 
 module.exports = router;

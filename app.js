@@ -66,6 +66,7 @@ db.connect((error) => {
 //Define Routes
 app.use('/', require('./routes/pages-router'));
 app.use('/auth', require('./routes/auth-router'));
+app.use('/login', require('./routes/login-router'));
 
 
 
