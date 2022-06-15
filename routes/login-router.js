@@ -1,9 +1,9 @@
 const express = require('express');
-const authController = require('../controllers/auth-controller')
+const registerController = require('../controllers/register-controller')
 const router = express.Router();
 
 //route for submit the Register form
-router.post('/login', authController.register )
+router.post('/login', registerController.register )
 
 
 module.exports = router;
