@@ -32,7 +32,6 @@ const db = mysql.createConnection({
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     //we have create a new database 'nodejs-login' phpMyAdmin
-
     database: process.env.DATABASE
 
 });
@@ -42,6 +41,12 @@ const publicDirectory = path.join(__dirname,'./public')
 
 //Express is also using this directory
 app.use(express.static(publicDirectory));
+
+//Parse URL encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded());
+
+//Parse JSON bodies(as sent by API clients)
+app.use(express.json());
 
 //handlebars template
 app.set('view engine', 'hbs');
@@ -58,19 +63,12 @@ db.connect((error) => {
 
 })
 
-/*app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/index_.html'));
-});*/
+//Define Routes
+app.use('/', require('./routes/pages-router'));
+app.use('/auth', require('./routes/auth-router'));
 
-//request:  grab something from a form for example 
-//response is what you want to send to the frontend
-app.get('/', (req, res) => {
-    res.render('index')
-});
-//register
-app.get('/register', (req, res) => {
-    res.render('register')
-});
+
+
 //you need to tell which port do you want to listen in order to start your first project
 app.listen(5000, () => {
     console.log("Server started on Port 5000");
