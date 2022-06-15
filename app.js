@@ -1,6 +1,8 @@
  //we need to import Express that we just installed to make sure that we can start our server from nodejs
 const express = require('express');
 
+const session = require('express-session');
+
 const path = require('path');
 //import mysql
 const mysql = require('mysql');
@@ -15,7 +17,11 @@ dotenv.config({path: './.env'})
 //start a server with app
 const app = express();
 
-
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
 
 //create all the values for the connection to the database
 //we use dotenv for sensitive connections
@@ -52,14 +58,19 @@ db.connect((error) => {
 
 })
 
+/*app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/index_.html'));
+});*/
 
 //request:  grab something from a form for example 
 //response is what you want to send to the frontend
 app.get('/', (req, res) => {
-    //res.send("<h1> Home Page</h1>")
     res.render('index')
 });
-
+//register
+app.get('/register', (req, res) => {
+    res.render('register')
+});
 //you need to tell which port do you want to listen in order to start your first project
 app.listen(5000, () => {
     console.log("Server started on Port 5000");
