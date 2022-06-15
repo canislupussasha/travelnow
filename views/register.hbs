@@ -26,21 +26,27 @@
             <form action="/auth/register" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your Name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter your Name" name="name">
                 </div>
                  <div class="form-group">
                     <label for="email">E-Mail Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your E-Mail">
+                    <input type="email" class="form-control" id="email" placeholder="Enter your E-Mail" name="email">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                </div>
+                 <div class="form-group">
+                    <label for="passwordConfirm">Confirm Password</label>
+                    <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
                 </div>
                
                 <button type="submit" class="btn btn-primary">Register</button>
                 </form>
         </div>
+
+       
       </div>
 </body>
 </html>
