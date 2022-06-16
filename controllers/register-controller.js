@@ -6,7 +6,7 @@ exports.register = (req, res) =>{
 
     const{name, email, password, passwordConfirm} = req.body;
 
-    dbConnection.query('SELECT email FROM users WHERE email = ? ',[email],(error, results) => {
+ /*   dbConnection.query('SELECT email FROM users WHERE email = ? ',[email],(error, results) => {
         if(error){
             console.log(error);
         }
@@ -20,5 +20,5 @@ exports.register = (req, res) =>{
             })
         }
     })
-
+*/
 }
