@@ -46,9 +46,17 @@
                 </form>
         </div>
         <!--Handlebars -->
-            {{#if message}}
-            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+            {{#if success}}
+            <h4 class="alert alert-success mt-4">{{success}}</h4>
             {{/if }}
+             {{#if danger}}
+            <h4 class="alert alert-danger mt-4">{{danger}}</h4>
+            {{/if }}
+             {{#if warning}}
+            <h4 class="alert alert-warning mt-4">{{warning}}</h4>
+            {{/if }}
+            
+    
        
       </div>
 </body>

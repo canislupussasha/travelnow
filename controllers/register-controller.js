@@ -14,11 +14,11 @@ exports.register = (req, res) =>{
         }
         if(results.length > 0){
             return res.render('register', {
-                message:'That email is already in use'
+                danger:'That email is already in use'
             })
         }else if(password !== passwordConfirm ){
             return res.render('register', {
-                message:'Oops! Password does not matches'
+                warning:'Oops! Password does not matches'
             });
         }
         //how many times do you want to hash your password = 8
@@ -30,7 +30,7 @@ exports.register = (req, res) =>{
                 console.log(error);
             }else {
                 return res.render('register', {
-                    message:'User registered'
+                    success:'User registered'
                 });
             }
         })
