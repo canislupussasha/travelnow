@@ -6,62 +6,62 @@
 
 var prompts = [
     {
-        prompt: 'I find it difficult to introduce myself to people',
+        prompt: 'You like to chill on the beach at your holiday destination',
         weight: -1,
         class: 'group0'
     },
     {
-        prompt: 'I get so lost in my thoughts I ignore or forget my surroundings',
+        prompt: 'You dont like to travel, when its colder',
         weight: -1,
         class: 'group1'
     },
     {
-        prompt: 'I do not usually initiate conversations',
+        prompt: 'You prefer laying in the sun and go swimming rather to be at a quiet countryside',
         weight: -1,
         class: 'group2'
     },
     {
-        prompt: 'I prefer not to engage with people who seem angry or upset',
+        prompt: 'You like to do sightseeing, biking and similiar activities rather then being on the beach',
         weight: -1,
         class: 'group3'
     },
     {
-        prompt: 'I choose my friends carefully',
+        prompt: 'You do nourish yourself healthy',
         weight: -1,
         class: 'group4'
     },
     {
-        prompt: 'I find it difficult to tell stories about myself',
+        prompt: 'You do like dishes that predominantly contain meat',
         weight: -1,
         class: 'group5'
     },
     {
-        prompt: 'I am usually highly motivated and energetic',
+        prompt: 'You do like eating Fastfood rather than asian or meat dishes',
         weight: 1,
         class: 'group6'
     },
     {
-        prompt: 'I find it easy to walk up to a group of people and join in conversation',
+        prompt: 'You would rather travel by plane than by car or train ',
         weight: 1,
         class: 'group7'
     },
     {
-        prompt: 'Being adaptable is more important than being organized',
+        prompt: 'Do you have high expectations when it comes to accommodation ',
         weight: 1,
         class: 'group8'
     },
     {
-        prompt: 'I care more about making sure no one gets upset than winning a debate',
+        prompt: 'You like to spend the nights in the wild nature when going on vaccation e.g. camping  ',
         weight: 1,
         class: 'group9'
     },
     {
-        prompt: 'I often do not feel I have to justify myself to people',
+        prompt: 'You prefer spending the stay in a hotel rather than outside',
         weight: 1,
         class: 'group10'
     },
     {
-        prompt: 'I would rather improvise than spend time coming up with a detailed plan',
+        prompt: 'You also like to visit countries that are not doing so well economically',
         weight: 1,
         class: 'group11'
     }
