@@ -1,26 +1,18 @@
-exports.isLoggedIn = async (req, res, next) => {
-    if (req.cookies.userSave) {
-        try {
-            // 1. Verify the token
-            const decoded = await promisify(jwt.verify)(req.cookies.userSave,
-                process.env.JWT_SECRET
-            );
-            console.log(decoded);
+const db = require('../db/db');
+const jwt = require("jsonwebtoken");
 
-            // 2. Check if the user still exist
-            db.query('SELECT * FROM users WHERE id = ?', [decoded.id], (err, results) => {
-                console.log(results);
-                if (!results) {
-                    return next();
-                }
-                req.user = results[0];
-                return next();
-            });
-        } catch (err) {
-            console.log(err)
-            return next();
-        }
-    } else {
-        next();
-    }
+const loggedIn = (req, res, next) => {
+   if (!req.cookies.userRegistered)return next();
+   try{
+    const decoded = jwt.verify(req.cookies.userRegistered, process.env.JWT_SECRET);
+    db.query("SELECT * FROM users WHERE id = ?",[decoded.id], (err, result) =>{
+        if(err) return next();
+        req.user = result [0];
+        return next();
+    })
+   }catch{
+    if(err)return next()
+   }
 }
+
+module.exports = loggedIn;

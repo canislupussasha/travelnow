@@ -38,24 +38,24 @@
     <div class="container my-5">
         <div class="card" style="width: 40rem;">
             <div class="card-body">
-                <form action="/auth/register" method="POST">
+                <form action="/register" method="POST">
                     <h4>Register</h4>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" autocomplete="off" required>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                     <div class="mb-3">
                         <label for="passwordConfirm" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" required>
                     </div>
                     <div class="alert alert-danger" role="alert" id="error" style="display: none;"> </div>
                     <div class="alert alert-success" role="alert" id="success"style="display: none;"></div>
