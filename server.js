@@ -5,6 +5,7 @@ const app = express();
 const dotenv = require("dotenv").config();
 const cookieParser = require("cookie-parser");
 
+// Serving static files from folder 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'tokyo')));
 app.use(express.urlencoded({ extended: false }))
