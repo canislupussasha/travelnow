@@ -17,6 +17,8 @@ app.use('/', require('./routes/pages'));
 app.use('/api', require('./controllers/auth'));
 
 app.set('view engine', 'html');
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 app.listen(port, (error) => {
     if (error) {
