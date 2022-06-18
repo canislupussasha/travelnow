@@ -5,7 +5,8 @@ const app = express();
 const dotenv = require("dotenv").config();
 const cookieParser = require("cookie-parser");
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'tokyo')));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
 app.use(cookieParser());
