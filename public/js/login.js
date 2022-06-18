@@ -1,12 +1,11 @@
 form.addEventListener("submit", () => {
-    const register = {
+    const login = {
         email: email.value,
-        name: name.value,
         password: password.value
     }
-    fetch("/api/register", {
+    fetch("/api/login", {
         method: "POST",
-        body: JSON.stringify(register),
+        body: JSON.stringify(login),
         headers: {
             "Content-Type": "application/json"
         }
@@ -16,6 +15,10 @@ form.addEventListener("submit", () => {
                 success.style.display = "none"
                 error.style.display = "block"
                 error.innerText = data.error
+            }else{
+                success.style.display = "none"
+                error.style.display = "block"
+                success.innerText = data.success
             }
         })
 })

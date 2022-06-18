@@ -1,24 +1,23 @@
 const express = require("express");
+const db = require("./db/db")
 const path = require("path")
-const mysql = require("mysql");
 const app = express();
-const dotenv = require("dotenv").config();
-const cookieParser = require("cookie-parser");
+const cookie = require("cookie-parser");
+const port = process.env.PORT ?? 5000;
 
 // Serving static files from folder 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'tokyo')));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookie());
+
+// Define Routes
+app.use('/', require('./routes/pages'));
+app.use('/api', require('./controllers/auth'));
+
 app.set('view engine', 'html');
-const db = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
-});
-const port = process.env.PORT ?? 5000;
+
 app.listen(port, (error) => {
     if (error) {
         console.log(error);
@@ -26,8 +25,6 @@ app.listen(port, (error) => {
         console.log(`Server listening at http://localhost:${port}`)
     }
 });
-// Define Routes
-app.use('/', require('./routes/pages'));
-app.use('/auth', require('./routes/auth'));
+
 
 
