@@ -1,5 +1,5 @@
 
-//we need to import Express that we just installed to make sure that we can start our server from nodejs
+ //we need to import Express that we just installed to make sure that we can start our server from nodejs
 const express = require('express');
 //import mysql
 const mysql = require('mysql');
