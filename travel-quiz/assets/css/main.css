@@ -1,0 +1,351 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../images/backgroundImage.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.site {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.siteContent {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footerText {
+      padding-left: 10px;
+      padding-right: 10px;
+}
+
+/*--- Headings ----*/
+
+.homePageHeading {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    padding-top: 20px;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 50px;
+}
+
+
+.question {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #07375d;
+    padding-top: 15px;
+    font-weight: 900;
+    font-size: 26px;
+}
+
+
+.aboutInfo {
+    color: #07375d;
+    font-size: 18px;
+    background-color: #fff;
+    opacity: 0.8;
+    border-radius: 15px;
+    padding: 10px;
+    line-height: 30px;
+}
+
+/*---- Button ----*/
+
+.startQuizBtn {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 23px;
+}
+
+.aboutQuizBtn {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#startQuiz {
+    font-size: 30px!important;
+    outline: none;
+}
+
+
+button {
+    color: #3d6086;
+    border-radius: 30px;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 5px 5px 0px rgba(125,116,125,1);
+    box-shadow: 1px 5px 5px 0px rgba(125,116,125,1);
+    background-color: #f3cef9;
+    font-size: 20px;
+}
+
+button > a {
+    color: #3d6086;
+    
+}
+
+button > a:hover {
+    text-decoration: none; 
+    color: #3d6086;
+    
+}
+
+button:hover{
+    background-color:#e4b0ec;
+}
+
+.answers {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    display: inline-block;
+    font-weight: 600;
+}
+.answers label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.next {
+    padding-top: 20px;
+}
+
+.previous {
+    padding-top: 20px;
+}
+
+.submit {
+    padding-top: 20px;
+}
+
+#next {
+    outline: none;
+}
+
+#previous {
+    outline: none;
+}
+
+#submit {
+    outline: none;
+}
+
+/*---- Nav bar from Codeply and Bootstrap4 https://www.codeply.com/go/QAXbNGbWPA/bootstrap-4-navbar-transparent  ---*/
+
+nav {
+    background-color: transparent!important;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+        color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(225, 255, 255, 0.6);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.navbar-nav > li.active {
+    color: #fff;
+}
+
+
+/*-- Quiz Slide css code taken from https://www.sitepoint.com/simple-javascript-quiz/ and edited ---*/
+
+
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+.active-slide {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* All slides are layerred on top of each other.. when you change the class, the right slide comes to the surface. */
+
+/*--- Quiz container ---*/
+
+.quiz-container{
+    position: relative;
+    height: 240px;
+    background-color: #fff;
+    display: inline-block;
+    opacity: 0.6;
+    border-radius: 15px;
+}
+
+.quiz {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+/*-- Google Maps -- */
+
+#map {
+    width: auto;
+    height: 300px;
+    position: static;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.mapsContainer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/*-- Results --- */
+
+#results {
+    color: #2c87d0;
+    font-weight: 700;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.resultsContainer {
+    background-color: #fff;
+    opacity: 0.6;
+    border-radius: 15px;
+}
+
+.results {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*-- Media Queries ---*/
+
+@media (min-width: 375px) {
+    .quiz-container {
+        height: 220px;
+    }
+}
+
+@media (min-width:768px) {
+    .homePageHeading {
+          font-size: 40px;
+    }
+}
+
+@media (min-width: 768px) {
+    .quiz-container {
+        margin-top: 40px;
+        height: 180px;
+    }
+}
+
+@media (min-width: 768px) {
+    .question {
+        padding-top: 20px;
+    }
+}
+
+@media (min-width:768px) {
+    button {
+        font-size: 30px;
+    }
+}
+
+
+@media (min-width:768px) {
+    .startQuizBtn {
+          padding-top: 50px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .question {
+        font-size: 32px;
+    }
+}
+
+@media (min-width:1024px) {
+    .homePageHeading {
+          font-size: 35px;
+          padding-top: 7px;
+    }
+}
+@media (min-width: 1024px) {
+  .startQuizBtn {
+    padding-top: 100px;
+     }
+}
+
+
+@media (min-width: 1900px) {
+    .homePageHeading {
+        padding-top: 250px;
+        font-size: 80px;
+        padding-bottom: 50px;
+    }
+}
+
+@media (min-width: 2540px) {
+    button {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 2540px) {
+    .quiz-container {
+        height: 300px;
+    }
+}
+
+@media (min-width: 2540px) {
+    .question {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 2540px) {
+    .answers {
+        font-size: 30px;
+    }
+}
