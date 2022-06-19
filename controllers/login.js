@@ -16,7 +16,7 @@ const login = async (req, res) => {
                     httpOnly: true
                 })
                 const cookieOptions = {
-                    expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRES * 24 *60 * 1000),
+                    expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 1000),
                     httpOnly: true
                 }
                 res.cookie("userRegistered", token, cookieOptions);

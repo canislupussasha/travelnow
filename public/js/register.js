@@ -1,7 +1,6 @@
 form.addEventListener("submit", () => {
     const register = {
         email: email.value,
-        name: name.value,
         password: password.value
     }
     fetch("/api/register", {
