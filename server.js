@@ -3,7 +3,7 @@ const db = require("./db/db")
 const path = require("path")
 const app = express();
 const cookie = require("cookie-parser");
-const port = process.env.PORT ?? 5000;
+const port = process.env.PORT ?? 7000;
 
 // Serving static files from folder 'public'
 app.use(express.static(path.join(__dirname, 'public')));
