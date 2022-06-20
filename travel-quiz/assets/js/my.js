@@ -299,6 +299,23 @@
 
         resultsContainer.innerHTML = `${countryToGoTo}!`;
 
+
+        /* 
+        
+        Sending JSON via AJAX
+        
+        */
+
+        const toSend = 
+        {
+
+            country: `${countryToGoTo}`
+
+        }
+
+        const jsonString = JSON.stringify(toSend); 
+        console.log(jsonString);  
+
     }
 
     /* -- Show questions and next, previous and submit buttoms --*/
