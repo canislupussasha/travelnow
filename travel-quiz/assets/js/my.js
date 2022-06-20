@@ -306,7 +306,7 @@
         
         */
 
-        const toSend = 
+     /*   const toSend = 
         {
 
             country: `${countryToGoTo}`
@@ -314,7 +314,17 @@
         }
 
         const jsonString = JSON.stringify(toSend); 
-        console.log(jsonString);  
+        console.log(jsonString); 
+        */ 
+
+
+        const toSend = 
+        {
+            answerArray
+        }
+
+        const jsonString = JSON.stringify(toSend);
+        console.log(jsonString);
 
     }
 
